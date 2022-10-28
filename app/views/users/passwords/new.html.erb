@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>TOP</title>
+    <meta charset="utf-8">
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="SVr5h47wWXSd6JWnICGyiGu/PoRSFxDF5o40iw6Bib3t475vXa0cdONAky6JGTIkvCe/f6EKkU44HXIyQ2rmVA==" />
+    
+
+    <link rel="stylesheet" media="all" href="/assets/application-3835ee6e9464fd692964c0c52375776373fc404cd8abf971835a021aa6bcca3f.css" data-turbolinks-track="reload" />
+    <script src="/packs/js/application-dd6e88065a32b23f8e21.js" data-turbolinks-track="reload"></script>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+  
+    <%= stylesheet_link_tag "login", :media => "all" %>
+    <%= stylesheet_link_tag "forgotpassword", :media => "all" %>
+
+    <%= stylesheet_link_tag "common", :media => "all" %>
+
+  </head>
+  <body><!--このbody要素の中に書きます-->
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<h3>FORGOT YOUR PASSWORD?<div class="mainunderline"></div></h3>
+
+<div class="pine">
+
+        <div class="card-w col-md-4">
+        <div class="card neumorphism">
+        <div class="cardicon">
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" ,placeholder: "Email"%>
+  </div>
+
+   <div class="loginbutton">
+    <%= f.submit "Send me reset password" %>
+  </div>
+<% end %>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>TOP</title>
+    <meta charset="utf-8">
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="SVr5h47wWXSd6JWnICGyiGu/PoRSFxDF5o40iw6Bib3t475vXa0cdONAky6JGTIkvCe/f6EKkU44HXIyQ2rmVA==" />
+    
+
+    <link rel="stylesheet" media="all" href="/assets/application-3835ee6e9464fd692964c0c52375776373fc404cd8abf971835a021aa6bcca3f.css" data-turbolinks-track="reload" />
+    <script src="/packs/js/application-dd6e88065a32b23f8e21.js" data-turbolinks-track="reload"></script>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+  
+    <%= stylesheet_link_tag "edit_mypage", :media => "all" %>
+        <%= stylesheet_link_tag "common", :media => "all" %>
+
+
+  </head>
+  <body><!--このbody要素の中に書きます-->
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="backbutton"><i class="fas fa-backward"></i> <%= link_to "Back", :back %></div>
+<h3>USER EDIT<div class="mainunderline"></div></h3>
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+
+  <!--アカウント編集時に名前を入力できるようにフォームを追加-->
+  <div class="field">
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Name" %>
+  </div>
+
+  <!--アカウント編集時にプロフィールを入力できるようにフォームを追加-->
+  <div class="field">
+    <%= f.text_area :profile, autofocus: true , class: "profiletext", placeholder: "Profile"%>
+  </div>
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" , placeholder: "Email"%>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password" , placeholder: "New Password"%>
+        <% if @minimum_password_length %><br />
+        <em><%= @minimum_password_length %> characters minimum</em>
+        <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" , placeholder: "Password confirmation"%>
+  </div>
+
+  <div class="field">
+    <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password" , placeholder: "Current password"%>
+  </div>
+
+  <div class="updatebutton">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<h3>Cancel my account<div class="mainunderline"></div></h3>
+
+<p> <div class="updatebutton"><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></div></p>
+
+
+<br>
+<br>
+<br>
+    </body>
+  </html>

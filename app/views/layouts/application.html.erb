@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pineapple</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
+   <%= yield :css %>
+  
+  </head>
+
+  <body>
+
+  <header class="header-nav">
+    <span class="t2">NAPPLE!!!</span>
+    <nav><a href=".third-block"><button class="unit" type="button"><%= link_to "TOP　", pinehomes_path %><i class="fas fa-home"></i></button></a></nav>
+    <nav><a href=".third-block"><button class="unit" type="button"><%= link_to "VIEW　", pines_path%><i class="fas fa-comments"></i></button></a></nav>
+    <nav><a href=".first-block"><button class="unit" type="button">
+        <% if user_signed_in? %>
+            <%= link_to "SIGN OUT　", destroy_user_session_path, method: :delete %><i class="fas fa-sign-out-alt"></i>
+        <% else %>
+            <%= link_to "SIGN IN　",  pines_path %><i class="fas fa-sign-in-alt"></i>
+        <% end %></button></a>
+    </nav>
+    <nav>
+        <a href=".second-block"><button class="unit" type="button">
+            <%= link_to "SIGN UP　", new_user_registration_path %><i class="fas fa-user-plus"></i></button></a>
+    </nav>
+    <nav><a href=".third-block">
+    <button class="unit" type="button"> 
+        <% if user_signed_in? %>
+            <%= link_to "MY PAGE　", user_path(current_user.id) %><i class="fas fa-user-edit"></i>
+        <% else %>
+            <%= link_to "MY PAGE　", pines_path %><i class="fas fa-user-edit"></i>
+        <% end %></button></a>
+    </nav>
+</header>
+
+
+
+
+
+
+    <%= yield %>
+    </body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <title>TOP</title>
+        <meta charset="utf-8">
+        <meta name="csrf-param" content="authenticity_token" />
+        <meta name="csrf-token" content="SVr5h47wWXSd6JWnICGyiGu/PoRSFxDF5o40iw6Bib3t475vXa0cdONAky6JGTIkvCe/f6EKkU44HXIyQ2rmVA==" />
+        
+
+        <link rel="stylesheet" media="all" href="/assets/application-3835ee6e9464fd692964c0c52375776373fc404cd8abf971835a021aa6bcca3f.css" data-turbolinks-track="reload" />
+        <script src="/packs/js/application-dd6e88065a32b23f8e21.js" data-turbolinks-track="reload"></script>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+
+        <%= stylesheet_link_tag "tag", :media => "all" %>
+        <%= stylesheet_link_tag "common", :media => "all" %>
+
+        <%= stylesheet_link_tag "allpost", :media => "all" %>
+
+    </head>
+    <body><!--このbody要素の中に書きます-->
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<h3>POSTS<div class="mainunderline"></div></h3>
+<div class="tagflex">
+<%#タグ検索機能%>
+<%= form_tag({controller:"pines",action:"index"}, method: :get) do %>
+    <% Tag.all.each do |t| %>
+
+        <ul>
+            <li>
+                <label>
+                    <%= check_box :tag_ids, t.name %>
+                        <div class="icon-box">
+                            <i class="fas fa-hashtag"></i><%= t.name %>
+                </label>
+            </li>
+        </ul>
+    <% end %></div>
+<div class="kensaku">
+    <%= submit_tag 'タグ検索' %>
+<% end %>
+</div>
+
+<!-- 以下を追記 投稿一覧ページでタグの追加できるようにする-->
+<div class="">
+    <%= form_tag({controller:"pines",action:"index"}, method: :get) do %>
+    <%= text_field_tag :tag %>
+    <input type="submit" name="commit" value="タグを追加" data-disable-with="タグを追加"><i class="fas fa-plus-circle"></i>
+<% end %>
+<!-- ここまで -->
+
+<div class="allpost">
+<div class="pines-container">
+    <% @pines.each do |t| %>
+    <div class="pine">
+    
+    <div class="container wrapper">
+        <div class="card-w col-md-4">
+        <div class="card neumorphism">
+        <div class="cardicon">
+
+        <div class="mainitem"><a href="/users/<%= t.user.id %>"><i class="fas fa-user-circle"></i><%= t.user.name %></a></div><br>
+        <p><%= image_tag t.image_url, size: "250x200" if t.image? %></p><br>
+        <div class="title"><p><%= t.title %></p></div><br>
+        <p>Name：<%= t.name %></p><br>
+        <p><i class="fas fa-money-bill-wave-alt"></i> <%= t.price %></p><br>
+        <p><i class="fas fa-map-marker-alt"></i> <%= t.place %></p>
+        <p>　<%= t.address %></p><br>
+
+        <div class="mainitem3">
+                <% if user_signed_in? %>
+                    <% if current_user.already_liked?(t) %> <%#いいね機能%>
+                        <%= link_to pine_like_path(id: t.id, pine_id: t.id), method: :delete do %>
+                            <i class="fas fa-heart"></i><%= t.likes.count %>
+                        <% end %>
+                    <% else %>
+                        <%= link_to pine_likes_path(id: t.id, pine_id: t.id), method: :post do %>
+                            <i class="far fa-heart"></i><%= t.likes.count %>
+                        <% end %>
+                        <% end %>
+                    <% else %>
+                    <i class="far fa-heart"></i><%= t.likes.count %>
+                <% end %>   
+        </div>
+
+        <div class="mainitem2"><a><%= link_to "more", pine_path(t.id) %></a></div>
+        
+    
+                </div>
+            </div>
+        </div>
+        </div></div>
+
+    <% end %>
+</div>
+</div>
+
+
+
+
+
+
+
+        <div class="pagenationbutton">
+                <%= paginate @pines %>
+        </div>
+        
+        <%#ページネーション機能%>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<h3>RANKING<div class="mainunderline"></div></h3>
+
+<div class="pines-container">
+    <% @all_ranks.each do |t| %>
+        <div class="pine">
+
+        <div class="container wrapper">
+        <div class="card-w col-md-4">
+        <div class="card neumorphism">
+        <div class="cardicon">
+
+        <div class="mainitem"><a href="/users/<%= t.user.id %>"><i class="fas fa-user-circle"></i><%= t.user.name %></a></div>
+        <p><%= image_tag t.image_url, size: "250x200" if t.image? %></p><br>
+        <div class="title"><p><%= t.title %></p></div><br>
+        <p>Name：<%= t.name %></p><br>
+        <p><i class="fas fa-money-bill-wave-alt"></i> <%= t.price %></p><br>
+        <p><i class="fas fa-map-marker-alt"></i> <%= t.place %></p>
+        <p>　<%= t.address %></p><br>
+
+<div class="mainitem3">
+        <% if user_signed_in? %>
+            <% if current_user.already_liked?(t) %> <%#いいね機能%>
+                <%= link_to pine_like_path(id: t.id, pine_id: t.id), method: :delete do %>
+                    <i class="fas fa-heart"></i><%= t.likes.count %>
+                <% end %>
+            <% else %>
+                <%= link_to pine_likes_path(id: t.id, pine_id: t.id), method: :post do %>
+                    <i class="far fa-heart"></i><%= t.likes.count %>
+                <% end %>
+            <% end %>
+        <% else %>
+            <i class="far fa-heart"></i><%= t.likes.count %>
+    <% end %>    
+</div>
+
+     <div class="mainitem2"><a><%= link_to "more", pine_path(t.id) %></a></div>
+            </div>
+            </div>
+        </div>
+        </div></div>
+
+    <% end %>
+</div>
+</div>
+
+
+
+<% if user_signed_in? %>
+<% end %>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+
+<footer></footer>
+</body>
+</html>

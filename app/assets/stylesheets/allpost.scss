@@ -1,0 +1,87 @@
+body, html {background-color: #f4f4f4;}
+
+nav{text-align: center;}
+
+body, html {background-color: #f4f4f4;}
+
+body, p, input, select, textarea, button{
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: -0.2px;
+    font-size: 16px;
+}
+
+.mainunderline{
+    background-color: #489F60;
+    content: "";
+    width: 40px;
+    height: 2px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+
+h3{text-align: center; color: #636363;}
+
+.pines-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    margin-bottom: 60px;
+    justify-content: center;
+}
+
+.pine{margin-left: 25px; margin-right: 25px; margin-bottom: 50px;}
+
+.neumorphism {background-color: #f4f4f4; box-shadow: 5px 5px 10px #cdcdcd;}
+
+.card-w {margin-bottom: 20px;}
+.card-w .card {
+display: flex;
+flex-direction: column;
+padding: 60px 30px;
+border-radius: 30px;
+position: relative;
+background: transparent;
+border-radius: 20px;
+width: 250px;
+height: 380px;
+background-color: #ffffff;
+}
+
+.card-w .card .card__text {text-align: center;}
+img{border-radius: 5px; object-fit: cover;}
+
+.mainitem a{
+width: 50px;
+font-size: 15px;
+font-weight: bolder;
+position: relative;
+bottom: 30px;
+}
+
+.mainitem2 a{
+    width: 50px;
+    font-size: 20px;
+    font-weight: bolder;
+    position: relative;
+    left:   200px;
+    bottom: 30px;
+    }
+
+.mainitem3 a{
+    width: 50px;
+    font-size: 20px;
+    font-weight: bolder;
+    position: relative;
+    bottom: 10px;
+}
+    
+
+    
+.cardicon {width: 100%; word-break: break-all;}
+.cardicon p{position: relative; bottom: 25px;}
+
+.title{font-weight: bold;}
+
+
+

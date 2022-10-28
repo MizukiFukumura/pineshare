@@ -1,0 +1,73 @@
+body, html {background-color: #f4f4f4;}
+
+.profile2{text-align: center;}
+
+.leftside{
+    display: inline-block;
+    text-align: left;
+}
+
+
+
+
+
+.pine2{display: flex; justify-content: center;}
+
+.neumorphism2 {
+background-color: #f4f4f4;
+box-shadow: 5px 5px 10px #cdcdcd;
+}
+
+.card-w2 .card2 {
+display: flex;
+flex-direction: column;
+align-items: center;
+border-radius: 30px;
+position: relative;
+background: transparent;
+border-radius: 20px;
+width: 450px;
+height: 300px;
+padding-top: 30px;
+margin-top: 100px;
+}
+
+p span{
+    font-size: 20px;
+    font-weight: bolder;
+    position: relative;
+    right: 60px;
+    color: #489F60;;
+}
+
+p{
+    color:#636363;
+}
+
+.inprofile{
+    padding-top: 20px;
+    position: relative;
+    right: 30px;
+}
+
+.unit2{
+    width: 280px;
+    position: relative;
+    bottom: 17px;
+    left: 30px;
+}
+
+.inprofile a{
+    padding-left: 200px;
+}
+
+.delateitem{
+    position: relative;
+    bottom: 46px;
+    left: 140px;
+}
+.edititem{
+    position: relative;
+    bottom: 80px;
+    left: 170px;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html> 
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <!--レスポンシブ対応　スマホ-->
+    <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+    <link rel="stylesheet" media="all" type="text/css" href="smartphone.css" />
+    
+    <title>TOP</title>
+
+    <%= stylesheet_link_tag "common", :media => "all" %>
+    <%= stylesheet_link_tag "more", :media => "all" %>
+  </head>
+  <body><!--このbody要素の中に書きます-->
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h3>MORE<div class="mainunderline"></div></h3>
+<div class="pines-container">
+
+<div class="container wrapper">
+        <div class="card-w3 col-md-4">
+        <div class="card neumorphism3">
+        <div class="cardicon3">
+
+
+      <div class="moreflex">
+          <div class="more1">
+            <div class="title"><p><%= @pine.title %></p></div><br>
+
+                  <p><%= @pine.created_at %></p><br>
+                  <p><%= image_tag @pine.image_url, size: "400x500" if @pine.image? %></p><br>
+                  <div class="mainitem3">
+              <% if user_signed_in? %>
+                  <% if current_user.already_liked?(@pine) %>
+                      <%= link_to pine_like_path(@pine), method: :delete do %>
+                        <i class="fas fa-heart"></i><%= @pine.likes.count %>
+                      <% end %>
+                  <% else %>
+                      <%= link_to pine_likes_path(@pine), method: :post do %>
+                        <i class="far fa-heart"></i><%= @pine.likes.count %>
+                      <% end %>
+                  <% end %>
+              <% else %>
+                  <i class="far fa-heart"></i><%= @pine.likes.count %>
+            <% end %>
+            </div>
+      </div>
+
+        <div class="more2">
+                  <div class="mainitem"><a href="/users/<%= @pine.user.id %>"><i class="fas fa-user-circle"></i><%= @pine.user.name %></a></div>
+                  <p>Name：<%= @pine.name %></p><br>
+                  <p><i class="fas fa-money-bill-wave-alt"></i> <%= @pine.price %><br><br>
+                  <p><i class="fas fa-map-marker-alt"></i> <%= @pine.place %></p><br>
+                  <p>　<%= @pine.address %></p><br>
+                  <p><i class="fas fa-info-circle"></i><%= @pine.about %></p><br>
+                  <p><i class="fas fa-link"></i><a href="<%= @pine.url %>"><%= @pine.url %></a></p><br>
+                  
+                  <% @pine.tags.each do |tag| %>
+                      <span><i class="fas fa-hashtag"></i><%= tag.name %></span>
+                  <% end %> 
+                  <br>
+
+          <div class="comment1">
+              <% if user_signed_in? %>
+                <p><%= form_with(model: [@pine, @comment], local: true) do |f| %></p>
+                  <%= f.text_area :content %>
+                  <%= button_tag type: "submit" do %>
+                    <i class="far fa-comments"></i> コメントする
+                  <% end %>
+                <% end %>
+              <% end %>
+          </div>
+        </div>
+
+    </div>
+
+
+
+<div class="moreflex2">
+    <div class="more3">
+            <h2>いいねしたユーザー</h2><br>
+            <% @pine.liked_users.each do |user| %>
+              <a href="/users/<%= user.id %>"><i class="fas fa-user-circle"></i><%= user.name %></a>
+              <% end %>
+    </div>
+
+
+    <div class="more4">
+            <%#コメント追記ここから%>
+            <div class="comment-wrapper">
+              <h2>コメント一覧</h2><br>
+              <% @comments.each do |c| %>
+                <div class="comment3">
+                  <a href="/users/<%= @pine.user.id %>"><i class="fas fa-user-circle"></i><%= c.user.name unless c.user.blank? %></a><br>
+                  <br><p>　<%= c.content %></p>
+                </div><br>
+              <% end %>
+          
+
+
+            </div>
+    </div>
+</div>
+
+
+
+            <%#追記ここまで%>
+
+                    </div>
+            </div>
+        </div>
+        </div></div>
+
+
+
+
+
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>TOP</title>
+    <meta charset="utf-8">
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="SVr5h47wWXSd6JWnICGyiGu/PoRSFxDF5o40iw6Bib3t475vXa0cdONAky6JGTIkvCe/f6EKkU44HXIyQ2rmVA==" />
+    
+
+    <link rel="stylesheet" media="all" href="/assets/application-3835ee6e9464fd692964c0c52375776373fc404cd8abf971835a021aa6bcca3f.css" data-turbolinks-track="reload" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+  
+    <%= stylesheet_link_tag "login", :media => "all" %>
+    <%= stylesheet_link_tag "common", :media => "all" %>
+  </head>
+  <body><!--このbody要素の中に書きます-->
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <div class="segment">
+    <h1>LOG IN<div class="mainunderline"></div></h1>
+</div>
+
+<br>
+<br>
+<div class="pine">
+
+        <div class="card-w col-md-4">
+        <div class="card neumorphism">
+        <div class="cardicon">
+
+
+
+  
+  <label>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+    <p>※登録したメールアドレスとパスワードを<br>　入力してください。</p><br>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email" %>
+    </div>
+  </label>
+  
+  <label>
+    <div class="field">
+      <%#= f.label :password %>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
+    </div>
+  </label>
+  
+  
+  <% if devise_mapping.rememberable? %>
+      <%= f.label :remember_me %>
+      <%= f.check_box :remember_me %>
+  <% end %>
+ 
+<br>
+<br>
+
+  <div class="loginbutton">
+      <%= f.submit "Log in" %>
+  </div>
+
+<% end %>
+
+<div class="userlink">
+  <%= render "users/shared/links" %>
+</div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer></footer>
+</body>
+</html>

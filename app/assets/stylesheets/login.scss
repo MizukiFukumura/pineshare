@@ -1,0 +1,230 @@
+    body, html {
+        background-color: #f4f4f4;
+    }
+    
+    body, p, input, select, textarea, button{
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: -0.2px;
+        font-size: 16px;
+    }
+
+
+    .mainunderline{
+        background-color: #489F60;
+        content: "";
+        width: 40px;
+        height: 2px;
+        margin-top: 20px;
+        margin-left: 48.5%;
+    }
+    
+    h1{
+        text-align: center;
+        color: #636363;   
+    }
+    
+    div p{
+        font-size: 15px;
+        color: #489F60;   
+    }
+    
+    form {
+        padding: 150px;
+        padding-top: 0px;
+        width: 320px;
+        margin: 0 auto;
+        z-index: -1;
+    }
+    
+
+
+    .segment {
+        text-align: center;
+        padding-top: 50px;
+    }
+    
+    button, input {
+        border: 0;
+        outline: 0;
+        font-size: 16px;
+        border-radius: 320px;
+        padding: 16px;
+        background-color: #F4F4F4;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 30px;
+        width: 100%;
+        margin-top: 30px;
+    }
+    
+    input {
+        margin-right: 8px;
+        box-shadow: inset 3px 2px 6px #cfcfcf, inset -6px -6px 11px #fff;
+        width: 100%;
+        box-sizing: border-box;
+        transition: all 0.2s ease-in-out;
+    }
+    input:focus {
+        box-shadow: inset 2px 2px 3px #b9b8b8, inset -1px -1px 2px #fff;
+    }
+    
+    button {
+        color: #827d65;
+        font-weight: bold;
+        box-shadow: -5px -5px 22px #FFF, 5px 5px 22px #cbccba;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        font-weight: 600;
+    }
+    button:hover {
+        box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #cbccba;
+    }
+    button:active {
+        box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+    }
+    button .icon {
+        margin-right: 8px;
+    }
+    button.unit {
+        border-radius: 8px;
+        line-height: 0;
+        width: 48px;
+        height: 48px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 8px;
+        font-size: 19.2px;
+    }
+    button.unit .icon {
+        margin-right: 0;
+    }
+    button.green {
+        display: block;
+        width: 100%;
+        color: #489F60;
+    }
+    
+    .input-group {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+
+.loginbutton{
+    padding-top: 20px;
+}
+
+    .loginbutton input {
+        color: #489F60;
+        font-weight: bold;
+        box-shadow: -4px -4px 22px #FFF, 5px 5px 22px #cbccba;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        font-weight: 600;
+        background-color: #EBE5B1;
+    }
+    .loginbutton input:hover {
+        box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #cbccba;
+    }
+    .loginbutton input:active {
+        box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+    }
+    .loginbutton input .icon {
+        margin-right: 8px;
+    }
+    .loginbutton input.unit {
+        border-radius: 8px;
+        line-height: 0;
+        width: 48px;
+        height: 48px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 8px;
+        font-size: 19.2px;
+    }
+    .loginbutton input.unit .icon {
+        margin-right: 0;
+    }
+    .loginbutton input.green {
+        display: block;
+        width: 100%;
+        color: #489F60;
+    }
+    
+    .input-group {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+
+.userlink{
+    text-align: center;
+    position: relative;
+    bottom: 100px;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+//外枠
+.pine{display: flex; justify-content: center;}
+
+.neumorphism {
+background-color: #f4f4f4;
+box-shadow: 5px 5px 10px #cdcdcd;
+}
+
+.card-w .card {
+display: flex;
+flex-direction: column;
+align-items: center;
+border-radius: 30px;
+position: relative;
+background: transparent;
+border-radius: 20px;
+width: 450px;
+height: 550px;
+justify-content: center;
+padding-top: 60px;
+}
+
+.card-w .card .card__text {
+text-align: center;
+}
+
+
+.checkin :not(input){
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    border-radius: 320px;
+    padding: 16px;
+    background-color: #F4F4F4;
+
+    color: #827d65;
+    font-weight: bold;
+    box-shadow: -5px -5px 22px #FFF, 5px 5px 22px #cbccba;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: -0.2px;
+    font-size: 16px;
+
+    box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #cbccba;
+
+    
+}
+

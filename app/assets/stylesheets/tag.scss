@@ -1,0 +1,160 @@
+body, html {
+    background-color: #f4f4f4;
+}
+
+body, p, input, select, textarea, button {
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: -0.2px;
+    font-size: 16px;
+}
+
+.mainunderline{
+    background-color: #636363;
+    content: "";
+    width: 40px;
+    height: 2px;
+    margin: auto;
+    margin-top: 20px;
+    
+}
+
+h3{text-align: center; color:#636363;}
+
+div, p {
+    font-size: 15px;
+    color: #636363;
+}
+
+form {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.field{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.segment {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.tagflex{
+    overflow: scroll;
+    height: 300px;
+    width: 800px;
+    margin: auto;
+}
+
+.kensaku input{
+    position: relative;
+    top: 70px;
+    left: 1000px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.updatebutton input {
+    color: #489F60;
+    font-weight: bold;
+    box-shadow: -4px -4px 22px #FFF, 5px 5px 22px #cbccba;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: #EBE5B1;
+}
+.updatebutton input:hover {
+    box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #cbccba;
+}
+.updatebutton input:active {
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+.updatebutton input .icon {
+    margin-right: 8px;
+}
+.updatebutton input.unit {
+    border-radius: 8px;
+    line-height: 0;
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 8px;
+    font-size: 19.2px;
+}
+.updatebutton input.unit .icon {
+    margin-right: 0;
+}
+.updatebutton input.green {
+    display: block;
+    width: 100%;
+    color: #489F60;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+
+
+
+
+ul li {
+    position: relative;
+    list-style: none;
+    text-align: center;
+    margin: 15px;
+}
+ul li label {
+    position: relative;
+    cursor: pointer;
+}
+ul li label input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+}
+ul li label :checked ~ .icon-box {
+    box-shadow: inset -2px -2px 5px white, inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+    ul li label :checked ~ .icon-box .fa {
+    transform: scale(0.95);
+}
+ul li label .icon-box {
+    width: auto;
+    height: 35px;
+    background: #ebf5fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+ul li label .icon-box .fa {
+    font-size: 30px;
+    color: #6a9bd8;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>TOP</title>
+    <meta charset="utf-8">
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="SVr5h47wWXSd6JWnICGyiGu/PoRSFxDF5o40iw6Bib3t475vXa0cdONAky6JGTIkvCe/f6EKkU44HXIyQ2rmVA==" />
+    
+
+    <link rel="stylesheet" media="all" href="/assets/application-3835ee6e9464fd692964c0c52375776373fc404cd8abf971835a021aa6bcca3f.css" data-turbolinks-track="reload" />
+    <script src="/packs/js/application-dd6e88065a32b23f8e21.js" data-turbolinks-track="reload"></script>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+  
+    <%= stylesheet_link_tag "common", :media => "all" %>
+    <%= stylesheet_link_tag "pinehomes", :media => "all" %>
+    <%= stylesheet_link_tag "allpost", :media => "all" %>
+  </head>
+  <body><!--このbody要素の中に書きます-->
+
+
+<div class="mainImage"></div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!--   First block Start   -->
+  <section id="first-block">
+    <div class="title-container">
+    <div class="box2" id="makeImg">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="themeflex">
+  
+      <div class="theme10"><span>パイナップル</span></div>
+      <div class="theme11"><p>好きによる<br>好きのための<br>サイト</p></div></div>
+      <div class="theme2"><p>ー 味だけでなく見た目もかわいい、一石二鳥な "パイナップル" を共有するサイト ー</p></div>
+    </div>
+<br>
+
+<div class="container">
+    <div class="chart">
+      <div class="chart-label">
+        <p class="t2"><a href="/pines/new">POST</a><br><span>パイナップルを投げる</span></p>
+      </div>
+      <svg class="progress" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"></svg>
+    </div>
+    <div class="chart">
+      <div class="chart-label">
+        <p class="t2"><a href="/pines">VIEW</a><br><span>パイナップルを見る</span></p>
+      </div>
+      <svg class="progress" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"></svg>
+    </div>
+    <div class="chart">
+      <div class="chart-label">
+        <p class="t2"><a href="/pines">SIGN IN/UP</a><br><span>NAPPLEをはじめる</span></p>
+      </div>
+      <svg class="progress" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"></svg>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+
+    <h3>いいねランキング<div class="mainunderline"></div></h3>
+
+  
+  <%#= page_entries_info @all_ranks %> <%#ページネーション機能#%>
+
+<div class="pines-container">
+
+  <% @all_ranks.each do |t| %>
+          <div class="pine">
+
+        <div class="container wrapper">
+        <div class="card-w col-md-4">
+        <div class="card neumorphism">
+        <div class="cardicon">
+        
+            <div class="mainitem"><a href="/users/<%= t.user.id %>"><i class="fas fa-user-circle"></i><%= t.user.name %></a></div>
+            <p><%= image_tag t.image_url, size: "250x200" if t.image? %></p>
+            <div class="title"><p><%= t.title %></p></div>
+            <p>Name：<%= t.name %></p>
+            <p><i class="fas fa-money-bill-wave-alt"></i> <%= t.price %></p>
+            <p><i class="fas fa-map-marker-alt"></i> <%= t.place %></p>
+            <p>　<%= t.address %></p>
+
+<div class="mainitem3">          
+        <% if user_signed_in? %>
+            <% if current_user.already_liked?(t) %> <%#いいね機能%>
+                <%= link_to pine_like_path(id: t.id, pine_id: t.id), method: :delete do %>
+                  <i class="fas fa-heart"></i><%= t.likes.count %>
+                <% end %>
+            <% else %>
+                <%= link_to pine_likes_path(id: t.id, pine_id: t.id), method: :post do %>
+                    <i class="far fa-heart"></i><%= t.likes.count %>
+                <% end %>
+            <% end %>
+        <% else %>
+            <i class="far fa-heart"></i><%= t.likes.count %>
+        <% end %>  
+</div>
+
+        <div class="mainitem2"><a><%= link_to "more", pine_path(t.id) %></a></div>
+            </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    <% end %>
+</div>
+</div>
+
+
+<footer><p>@Murasan</p></footer>
+
+  </body>
+</html>
+
+
+

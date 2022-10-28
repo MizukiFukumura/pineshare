@@ -1,0 +1,98 @@
+<!DOCTYPE html> 
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <!--レスポンシブ対応　スマホ-->
+    <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+    <link rel="stylesheet" media="all" type="text/css" href="smartphone.css" />
+    
+    <title>TOP</title>
+      <%= stylesheet_link_tag "tag", :media => "all" %>
+
+    <%= stylesheet_link_tag "newpost", :media => "all" %>
+    
+    <%= stylesheet_link_tag "common", :media => "all" %>
+
+
+  </head>
+  <body><!--このbody要素の中に書きます-->
+
+
+<br>
+<br>
+<br>
+<br>
+
+<div class="segment">
+<h3>NEW POST<div class="mainunderline"></div></h3>
+    <%= form_for @pine do |f| %>
+      <div class="newpost"><label>
+          <div class="field">
+            <%= f.text_field :title, :size => 140 ,placeholder: "title" %>
+          </div>
+      </label>
+        <br>
+      <label>
+        <div class="field">
+          <%= f.text_field :name, :size => 140, placeholder: "name" %>
+        </div>
+      </label>
+        <br>
+      <label>
+        <div class="field">
+          <%= f.text_field :price, :size => 140 , placeholder: "price" %>
+        </div>
+      <label>
+        <br>
+      <label>
+        <div class="field">
+          <%= f.text_field :place, :size => 140 , placeholder: "place" %>
+        </div>
+      </label>
+        <br>
+      <label>
+        <div class="field">
+          <%= f.text_field :address, :size => 140 , placeholder: "adress" %>
+        </div>
+      </label>
+        <br>
+      <label>
+        <div class="field">
+          <%= f.text_field :about, :size => 140 , placeholder: "others" %>
+        </div>
+      </label>
+        <br>
+      <label>
+        <div class="field">
+          <%= f.url_field :url, :size => 140 , placeholder: "URL" %>
+        </div>
+      </label>
+        <br>
+      <label>
+        <div class="field">
+          <%= f.file_field :image %>
+        </div> 
+      <label>
+     </div> 
+
+
+<!-- タグ機能以下を追記 -->
+    <div class='form-group'>
+        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %><p>
+            <div class='form-check'>
+                <%= tag.label class: 'form-check-label' do %>
+                    <%= tag.check_box class: 'form-check-input' %>
+                    <%= tag.text %>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+<!-- ここまで -->
+
+  <div class="postbutton">
+    <%= f.submit "投稿する" %>
+  <% end %>
+
+
+
+</div>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EigaSecond</title>
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="SVr5h47wWXSd6JWnICGyiGu/PoRSFxDF5o40iw6Bib3t475vXa0cdONAky6JGTIkvCe/f6EKkU44HXIyQ2rmVA==" />
+    
+
+    <link rel="stylesheet" media="all" href="/assets/application-3835ee6e9464fd692964c0c52375776373fc404cd8abf971835a021aa6bcca3f.css" data-turbolinks-track="reload" />
+    <script src="/packs/js/application-dd6e88065a32b23f8e21.js" data-turbolinks-track="reload"></script>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+
+    <%= stylesheet_link_tag "signup", :media => "all" %>
+    <%= stylesheet_link_tag "common", :media => "all" %>
+  </head>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+
+
+  <div class="segment">
+    <h1>SIGN UP<div class="mainunderline"></div></h1>
+    <br>
+    <br>
+
+  </div>
+  
+
+<div class="pine">
+      <div class="card-w col-md-4">
+      <div class="card neumorphism">
+      <div class="cardicon">
+
+  <label>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <p>※登録したメールアドレスとパスワードを<br>　入力してください。</p><br>
+      <%= f.text_field :name, autofocus: true, placeholder: "Name" %>
+  </div>
+  </label>
+  
+  <label>
+    <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email adress" %>
+    </div>
+  </label>
+
+  <label>
+    <div class="field">
+    <% if @minimum_password_length %>
+    <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
+  </div>
+  </label>
+
+  <label>
+    <div class="field">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "password_confirmation" %>
+    </div>
+  </label>
+
+  <div class="signupbutton">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+              
+ 
+<% end %>
+
+            </div>
+            </div>
+          </div>
+        </div>    
+<br>
+<br>
+<br>
+<br>
+
+  </body>
+</html>

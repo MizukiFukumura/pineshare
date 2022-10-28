@@ -1,0 +1,2 @@
+module PinesHelper
+end

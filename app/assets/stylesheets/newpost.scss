@@ -1,0 +1,150 @@
+body, html {
+    background-color: #f4f4f4;
+}
+
+body, p, input, select, textarea, button{
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: -0.2px;
+    font-size: 16px;
+}
+
+div, p {
+    font-size: 15px;
+    color: #489F60;
+    text-shadow: 1px 1px 2px #ffffff; //文字//
+}
+
+h3{text-align: center; color:#636363;}
+
+.mainunderline{
+    background-color: #489F60;
+    content: "";
+    width: 40px;
+    height: 2px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+form {
+    padding: 150px;
+    padding-top: 0px;
+    width: 700px;
+    margin: 0 auto;
+    z-index: -1;
+}
+
+.segment {
+    text-align: center;
+    padding-top: 20px;
+}
+
+button, input {
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #F4F4F4;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    width: 500px;
+    margin-top: 5px;
+}
+
+.newpost input {
+    margin-right: 8px;
+    box-shadow: inset 3px 2px 6px #cfcfcf, inset -6px -6px 11px #fff;
+        transition: all 0.2s ease-in-out; width: 700px;
+}
+input:focus {
+    box-shadow: inset 2px 2px 3px #b9b8b8, inset -1px -1px 2px #fff;
+}
+
+button {
+    color: #827d65;
+    font-weight: bold;
+    box-shadow: -5px -5px 22px #FFF, 5px 5px 22px #cbccba;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+}
+button:hover {
+    box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #cbccba;
+}
+button:active {
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+button .icon {
+    margin-right: 8px;
+}
+button.unit {
+    border-radius: 8px;
+    line-height: 0;
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 8px;
+    font-size: 19.2px;
+}
+button.unit .icon {
+    margin-right: 0;
+}
+button.green {
+    display: block;
+    width: 100%;
+    color: #489F60;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+
+
+.postbutton input {
+    color: #489F60;
+    font-weight: bold;
+    box-shadow: -4px -4px 22px #FFF, 5px 5px 22px #cbccba;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: #EBE5B1;
+}
+.postbutton input:hover {
+    box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #cbccba;
+}
+.postbutton input:active {
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+.postbutton input .icon {
+    margin-right: 8px;
+}
+.postbutton input.unit {
+    border-radius: 8px;
+    line-height: 0;
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 8px;
+    font-size: 19.2px;
+}
+.postbutton input.unit .icon {
+    margin-right: 0;
+}
+.postbutton input.green {
+    display: block;
+    width: 100%;
+    color: #489F60;
+}
+

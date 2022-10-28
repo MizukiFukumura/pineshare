@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>TOP</title>
+    <meta charset="utf-8">
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="SVr5h47wWXSd6JWnICGyiGu/PoRSFxDF5o40iw6Bib3t475vXa0cdONAky6JGTIkvCe/f6EKkU44HXIyQ2rmVA==" />
+    
+
+    <link rel="stylesheet" media="all" href="/assets/application-3835ee6e9464fd692964c0c52375776373fc404cd8abf971835a021aa6bcca3f.css" data-turbolinks-track="reload" />
+    <script src="/packs/js/application-dd6e88065a32b23f8e21.js" data-turbolinks-track="reload"></script>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+  
+    <%= stylesheet_link_tag "common", :media => "all" %>
+    <%= stylesheet_link_tag "pinehomes", :media => "all" %>
+  </head>
+  <body><!--このbody要素の中に書きます-->
+
+
+
+
+<h2>Change your password</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+  <%= f.hidden_field :reset_password_token %>
+
+  <div class="field">
+    <%= f.label :password, "New password" %><br />
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+    <% end %>
+    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirm new password" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Change my password" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>

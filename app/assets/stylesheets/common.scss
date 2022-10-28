@@ -1,0 +1,180 @@
+html{
+  display: block;
+}
+
+div{
+  color:#636363;;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+  line-height: 1;
+  color: #000;
+  font-family: "Josefin Sans", "YakuHanJPs", "Zen Kaku Gothic New", "Yu Gothic", YuGothic, "Hiragino Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+/*COMMON*/
+* {margin: 0; padding: 0;}
+
+header{height: 400px; background-color: #EBE5B1; z-index: +1;   z-index: +3;}
+
+a {color: #489F60; text-decoration: none; letter-spacing: 0.1em;}
+
+h3{
+  font-size: 1.6rem;
+  margin-top: 100px;
+}
+
+.header-nav {
+    background-color: #F4F4F4;;
+    position: fixed;
+    height: 45px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 30px;
+    align-items: center;
+}
+
+.unit-last
+{padding-right: 30px;}
+
+
+
+/*body, html {
+    background-color: #EBECF0;
+  }
+  */
+  
+  button {
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: -0.2px;
+    font-size: 16px;
+  }
+  .header-nav {padding: 20px 0; text-align: center;}
+  
+  button{
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    border-radius: 320px;
+    padding: 16px;
+    background-color: #EBE5B1;  //ボタンの上
+  }/*F4F4F4*/
+
+  button {
+    color: #61677C;
+    font-weight: bold;
+    box-shadow: -4px -4px 12px #fafac3, 6px 6px 12px #c3be93;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  button:hover {box-shadow: -2px -2px 5px #fafac3, 2px 2px 5px #c3be93;}
+  button:active {box-shadow: inset 1px 1px 2px #c3be93, inset -1px -1px 2px #ffffcf;}
+ 
+  button.unit {
+    border-radius: 10px;
+    line-height: 0;
+    width: 130px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 8px;
+    font-size: 13px;
+  }
+  
+
+//文字ロゴ//
+.t2{
+  font-size: 30px;
+  font-weight: 800;
+  color: #489F60;
+  margin-right:auto;
+  padding-left: 30px;
+}
+
+footer{
+  background-color: #EBE5B1;
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 30px;
+    align-items: center;
+    position: absolute;/*←絶対位置*/
+}
+
+
+// paginate
+.pagination{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.pagination span{
+  background-color: rgba(158, 158, 158, 0.4);
+  text-align: center;
+  width: 80px;
+  height: 25px;
+  border: solid 1px #EBE5B1;
+  color: rgb(197, 20, 159);
+  transition: .3s;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  margin-left: 10px;
+  border-radius: 8px;
+  padding-top: 10px;
+}
+
+
+
+.pagenationbutton span,  .pagenationbutton li{
+  color: #489F60;
+  font-weight: bold;
+  box-shadow: -4px -4px 5px #fafac3, 5px 5px 5px #cbccba;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: #EBE5B1;
+}
+.pagenationbutton span:hover , .pagenationbutton li:hover{
+  box-shadow: -2px -2px 5px #fafac3, 2px 2px 4px #cbccba;
+}
+.pagenationbutton span:active ,.pagenationbutton li:active{
+  box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+.pagenationbutton span .icon ,.pagenationbutton li{
+  margin-right: 8px;
+}
+.pagenationbutton span.unit ,.pagenationbutton li{
+  border-radius: 8px;
+  line-height: 0;
+  width: 80px;
+  height: 38px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px;
+  font-size: 19.2px;
+}
+.pagenationbutton span.unit .icon ,.pagenationbutton li{
+  margin-right: 0;
+}
+.pagenationbutton span.green {
+  display: block;
+  width: 100%;
+  color: #489F60;
+}
+
+.span-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
