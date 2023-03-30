@@ -24,8 +24,12 @@
 <br/>
 <br/>
 
-
-<h3>POSTS<div class="mainunderline"></div></h3>
+<h3>KEYWORDS<div class="mainunderline"></div></h3>
+<br>
+<br/>
+<br/>
+<br/>
+<br/>
 <div class="tagflex">
 <%#タグ検索機能%>
 <%= form_tag({controller:"pines",action:"index"}, method: :get) do %>
@@ -46,6 +50,7 @@
 <% end %>
 </div>
 
+
 <!-- 以下を追記 投稿一覧ページでタグの追加できるようにする-->
 <div class="">
     <%= form_tag({controller:"pines",action:"index"}, method: :get) do %>
@@ -54,11 +59,13 @@
 <% end %>
 <!-- ここまで -->
 
+
 <div class="allpost">
+<h3>POSTS<div class="mainunderline"></div></h3>
 <div class="pines-container">
     <% @pines.each do |t| %>
     <div class="pine">
-    
+
     <div class="container wrapper">
         <div class="card-w col-md-4">
         <div class="card neumorphism">
@@ -118,7 +125,7 @@
 <br/>
 <br/>
 <br/>
-<h3>RANKING<div class="mainunderline"></div></h3>
+<h3>いいねランキング<div class="mainunderline"></div></h3>
 
 <div class="pines-container">
     <% @all_ranks.each do |t| %>
@@ -174,7 +181,6 @@
 <br>
 <br>
 
-
-<footer></footer>
+<footer><p>@Murasan</p></footer>
 </body>
 </html>

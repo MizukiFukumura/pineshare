@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2022_10_18_153241) do
   create_table "pines", force: :cascade do |t|
     t.string "title"
     t.string "name"
+    t.string "price"
     t.string "place"
     t.string "address"
     t.text "about"
@@ -53,7 +54,6 @@ ActiveRecord::Schema.define(version: 2022_10_18_153241) do
     t.string "image"
     t.string "content"
     t.string "category"
-    t.string "price"
   end
 
   create_table "tags", force: :cascade do |t|

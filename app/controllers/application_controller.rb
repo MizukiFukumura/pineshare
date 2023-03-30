@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
 
+protect_from_forgery
 # deviseコントローラーにストロングパラメータを追加する          
 before_action :configure_permitted_parameters, if: :devise_controller?
 

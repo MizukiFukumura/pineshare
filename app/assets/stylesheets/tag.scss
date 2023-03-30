@@ -48,9 +48,25 @@ form {
 .tagflex{
     overflow: scroll;
     height: 300px;
-    width: 800px;
+    width: 1000px;
     margin: auto;
+    border-radius: 100px;
 }
+
+/*ボタンの設定*/
+::-webkit-scrollbar {
+    width: 10px;
+    height: 0px;
+    }
+    ::-webkit-scrollbar-track {
+    background-color: #EBE5B1;
+    border-radius: 100px;
+    }
+    ::-webkit-scrollbar-thumb {
+    background: #e0c373;
+    border-radius: 100px;
+    width: 130px;
+    }
 
 .kensaku input{
     position: relative;
@@ -144,16 +160,17 @@ ul li label :checked ~ .icon-box {
 ul li label .icon-box {
     width: auto;
     height: 35px;
-    background: #ebf5fc;
+    background: #EBE5B1;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: -2px -2px 5px white, 4px 4px 5px rgba(0, 0, 0, 0.2);
     border-radius: 30px;
     padding-left: 10px;
     padding-right: 10px;
-
 }
+
+
 ul li label .icon-box .fa {
     font-size: 30px;
     color: #6a9bd8;
